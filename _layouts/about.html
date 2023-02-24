@@ -34,6 +34,19 @@ layout: default
             </div>
             {%- endif %}
           </div>
+            {%- if page.profile.image_dir %}
+              {%- assign profile_image_dir = page.profile.image_dir | prepend: 'assets/img/' -%}
+            <script>
+              const images = []
+              {% for image in site.static_files %}
+                {% if image.path contains profile_image_dir %}
+                    images.push("{{image.name}}")
+                {% endif %}
+              {% endfor %}
+              var idx = Math.floor(Math.random() * images.length);
+              document.getElementById("profile_pic").src = "{{ profile_image_dir | relative_url }}/" + images[idx];
+            </script>
+            {% endif %}
           {%- endif %}
 
           <div class="clearfix">
@@ -66,5 +79,4 @@ layout: default
             </div>
           {%- endif %}
         </article>
-
 </div>
