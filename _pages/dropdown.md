@@ -1,13 +1,13 @@
 ---
 layout: page
-title: links
+title: misc
 nav: true
 nav_order: 6
 dropdown: true
 children: 
-    - title: publications
-      permalink: /publications/
+    - title: experiences
+      permalink: /cv/
     - title: divider
-    - title: projects
-      permalink: /projects/
+    - title: blog
+      permalink: /blog/
 ---
